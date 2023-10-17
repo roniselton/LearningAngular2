@@ -4,5 +4,41 @@
 Email: <input type="text" />
 Senha: <input type="password" />
 <br/><br/>
-<button  >Click Aqui</button>
+<button (click)="consultarProdutos()" >Click Aqui</button>
+<h2>Lista de Produtos</h2>
+<ul>
+  <li class="teste" *ngFor="let p of produtos; let i = index" > {{i}} - {{p}} <button (click)="remover(i)" > - </button> </li>
+  <li *ngIf="produtos.length == 0"> Nenhum item encontrado.</li>
+  <input type="text" [(ngModel)]="novoItem" /> <button (click)=" adicionar();">+</button>
+</ul>
+
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <ul>
+      <li> Opção 1</li>
+      <li> Opção 2</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li> Opção 1</li>
+      <li> Opção 2</li>
+      <li> Opção 3</li>
+      <li> Opção 4</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'client'">
+    <ul>
+      <li> Opção 1</li>
+    </ul>
+  </div>
+  <div *ngSwitchDefault>
+    <ul>
+      <li> Opção 5</li>
+    </ul>
+  </div>
+</div>
+
+
 
