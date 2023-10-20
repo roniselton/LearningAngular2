@@ -12,7 +12,7 @@ export class CardComponent implements OnInit{
     private activeRouter:ActivatedRoute,
     private router:Router){
       // pegando o id
-      this.activeRouter.params.subscribe((value)=>console.log(value));
+      this.activeRouter.firstChild?.params.subscribe((value)=>console.log(value));
     // http://localhost:4200/portfolio/2?name=Roni&token=123
     this.activeRouter.queryParams.subscribe((value)=>console.log(value));
 
