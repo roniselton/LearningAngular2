@@ -1,0 +1,10 @@
+<div class="card_container">
+  <h1> {{pokemon.name}} </h1>
+  <div class="card_img">
+    <img [src]="pokemon.sprites.front_default" />
+  </div>
+
+  <div class="card_types">
+    <span *ngFor="let tp of pokemon.types" class="{{tp.type.name}}"> {{tp.type.name}} </span>
+  </div>
+</div>
